@@ -9,7 +9,7 @@ assignees: ''
 ---
 
 -   Game: Game Name
--   AppId: 1234567
+-   App ID: 1234567
 -   Versions:
     -   Version A
         -   Depot ID: 1234567
