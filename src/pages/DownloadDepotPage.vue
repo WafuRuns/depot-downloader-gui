@@ -2,14 +2,21 @@
 import { useSettingsStore } from 'src/stores/settings-store';
 import { getApp } from 'src/types/app-data';
 import { ref } from 'vue';
+import { games } from 'src/types/games';
 
 const settingsStore = useSettingsStore();
+
+const localGames = games.map((game) => game.name);
 
 const appId = ref('');
 const depotId = ref('');
 const manifestId = ref('');
 const saveTo = ref('C:\\Games\\GameFolder');
 const disabled = ref(true);
+const game = ref('');
+const version = ref('');
+const gameOptions = ref(localGames);
+const versionOptions = ref<string[]>([]);
 
 function downloadDepot() {
     const username = settingsStore.$state.username;
@@ -35,6 +42,42 @@ function validate() {
         disabled.value = false;
     } else {
         disabled.value = true;
+    }
+}
+
+function filterGames(value: string, update: (callback: () => void) => void) {
+    update(() => {
+        const search = value.toLowerCase();
+        gameOptions.value = localGames.filter(
+            (gameName) => gameName.toLowerCase().indexOf(search) > -1,
+        );
+    });
+}
+
+function selectGame() {
+    const gameResult = games.find((foundGame) => {
+        return foundGame.name === game.value;
+    });
+
+    if (gameResult) {
+        appId.value = gameResult.appId;
+        versionOptions.value =
+            gameResult.versions.map((version) => version.name) || [];
+    }
+}
+
+function selectVersion() {
+    const gameResult = games.find((foundGame) => foundGame.name === game.value);
+
+    if (gameResult) {
+        const versionResult = gameResult.versions.find(
+            (foundVersion) => foundVersion.name === version.value,
+        );
+        if (versionResult) {
+            appId.value = gameResult.appId;
+            depotId.value = versionResult.depotId;
+            manifestId.value = versionResult.manifestId;
+        }
     }
 }
 </script>
@@ -93,6 +136,49 @@ function validate() {
                 :disable="disabled"
                 @click="downloadDepot"
             />
+        </div>
+        <h5>Select Preset</h5>
+        <div class="q-gutter-md row">
+            <q-select
+                outlined
+                v-model="game"
+                use-input
+                hide-selected
+                fill-input
+                :options="gameOptions"
+                input-debounce="0"
+                color="light-blue"
+                label="Game"
+                @filter="filterGames"
+                @update:model-value="selectGame"
+            >
+                <template v-slot:no-option>
+                    <q-item>
+                        <q-item-section class="text-grey">
+                            No results
+                        </q-item-section>
+                    </q-item>
+                </template>
+            </q-select>
+            <q-select
+                outlined
+                v-model="version"
+                use-input
+                hide-selected
+                fill-input
+                :options="versionOptions"
+                color="light-blue"
+                label="Version"
+                @update:model-value="selectVersion"
+            >
+                <template v-slot:no-option>
+                    <q-item>
+                        <q-item-section class="text-grey">
+                            No results
+                        </q-item-section>
+                    </q-item>
+                </template>
+            </q-select>
         </div>
         <p class="q-mt-lg text-warning">
             Make sure to set your login information in the Settings tab and have
