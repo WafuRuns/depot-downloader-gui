@@ -1,0 +1,30 @@
+// app global css in SCSS form
+* {
+    -webkit-user-select: none;
+}
+
+.drag-bar {
+    display: flex;
+    flex: 1;
+    min-height: 60px;
+    align-items: center;
+    -webkit-app-region: drag;
+}
+
+q-toolbar {
+    min-height: 60px;
+}
+
+.q-list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fill-space {
+    flex: 1 auto;
+}
+
+.circle-button {
+    width: 50px;
+    height: 50px;
+}
