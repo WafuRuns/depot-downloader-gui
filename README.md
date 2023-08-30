@@ -8,9 +8,9 @@ As a speedrunner, I often come across a situation where using an older version o
 
 Obviously, I sometimes get asked how I got the old version and many people tend to think I just disable the patching on Steam and then have to make some kind of backup in case I uninstall the game. When I tell them you can just download them using DepotDownloader, but most of them will ditch the idea upon finding out it's a CLI. That's why this exists.
 
-## Todo
+## How to add more speedrun presets
 
--   Speedrun-specific presets when downloading a depot
+Click the Issues tab at the top on GitHub. Next to the "Add new speedrun preset", click the Get started button, fill in the template and wait for someone to take care of it. It usually shouldn't take more than a couple of days.
 
 ## Development and contributions
 
