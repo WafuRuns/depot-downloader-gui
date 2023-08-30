@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { useSettingsStore } from 'src/stores/settings-store';
 import { getApp } from 'src/types/app-data';
-import { ref } from 'vue';
-import { games } from 'src/types/games';
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+import { Game } from 'src/types/game';
+import gamesJson from '../../presets/presets.json';
 
 const settingsStore = useSettingsStore();
 
-const localGames = games.map((game) => game.name);
+let games: Game[] = [];
+let localGames: string[] = [];
 
 const appId = ref('');
 const depotId = ref('');
@@ -80,6 +83,25 @@ function selectVersion() {
         }
     }
 }
+
+function fetchGames() {
+    axios
+        .get<Game[]>(
+            'https://raw.githubusercontent.com/WafuRuns/depot-downloader-gui/main/presets/presets.json',
+        )
+        .then((result) => {
+            games = result.data;
+            localGames = games.map((game) => game.name);
+        })
+        .catch(() => {
+            games = gamesJson as Game[];
+            localGames = games.map((game) => game.name);
+        });
+}
+
+onMounted(() => {
+    fetchGames();
+});
 </script>
 
 <template>

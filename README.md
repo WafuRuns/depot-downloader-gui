@@ -12,6 +12,10 @@ Obviously, I sometimes get asked how I got the old version and many people tend 
 
 Click the Issues tab at the top on GitHub. Next to the "Add new speedrun preset", click the Get started button, fill in the template and wait for someone to take care of it. It usually shouldn't take more than a couple of days.
 
+Alternatively, you can open the file presets.json in the presets folder, click the edit button, which should allow you to create a fork and add it yourself, however, you still have to make a pull request and have me approve it.
+
+If you have any questions or issues, contact me on Discord (wafuruns).
+
 ## Development and contributions
 
 Contributions are welcome if you want to improve the app, make it cleaner or just extend its functionality so that it can utilize DepotDownloader better.

@@ -1,6 +1,6 @@
 {
     "name": "depot-downloader-gui",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "GUI for simplifying the usage of DepotDownloader",
     "productName": "DepotDownloader GUI",
     "author": "WafuRuns <remiliass@gmail.com>",
