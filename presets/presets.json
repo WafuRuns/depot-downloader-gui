@@ -9,5 +9,58 @@
                 "manifestId": "2876073070051939866"
             }
         ]
+    },
+    {
+        "name": "The Beast Inside",
+        "appId": "792300",
+        "versions": [
+            {
+                "name": "Glitch hunting",
+                "depotId": "792301",
+                "manifestId": "1918684344964556832"
+            }
+        ]
+    },
+    {
+        "name": "Darksiders 3",
+        "appId": "606280",
+        "versions": [
+            {
+                "name": "Patch 1",
+                "depotId": "606281",
+                "manifestId": "6389232169547293661"
+            },
+            {
+                "name": "Patch 2",
+                "depotId": "606281",
+                "manifestId": "6313035361033116203"
+            }
+        ]
+    },
+    {
+        "name": "The Witcher 3: Wild Hunt",
+        "appId": "292030",
+        "versions": [
+            {
+                "name": "Old Patch - Content",
+                "depotId": "292031",
+                "manifestId": "3519552204180960943"
+            },
+            {
+                "name": "Old Patch - Binaries",
+                "depotId": "292032",
+                "manifestId": "3846497859495540176"
+            },
+            {
+                "name": "Old Patch - Metadata",
+                "depotId": "292034",
+                "manifestId": "1842430648075680678"
+            },
+            {
+                "name": "Old Patch - Japanese Audio",
+                "depotId": "292040",
+                "manifestId": "4697253065205230846"
+            }
+        ]
     }
 ]
