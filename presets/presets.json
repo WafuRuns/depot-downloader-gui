@@ -62,5 +62,21 @@
                 "manifestId": "4697253065205230846"
             }
         ]
+    },
+    {
+        "name": "Serious Sam Classics: Revolution",
+        "appId": "227780",
+        "versions": [
+            {
+                "name": "Early Access Beta - Binaries",
+                "depotId": "227782",
+                "manifestId": "6724102221228861638"
+            },
+            {
+                "name": "Early Access Beta - Content",
+                "depotId": "227781",
+                "manifestId": "2136503392684143438"
+            }
+        ]
     }
 ]
