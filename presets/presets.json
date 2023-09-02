@@ -78,5 +78,16 @@
                 "manifestId": "2136503392684143438"
             }
         ]
+    },
+    {
+        "name": "Someday You'll Return",
+        "appId": "840370",
+        "versions": [
+            {
+                "name": "Version 1.1 (Duping Glitch)",
+                "depotId": "840372",
+                "manifestId": "8534491501929628930"
+            }
+        ]
     }
 ]
