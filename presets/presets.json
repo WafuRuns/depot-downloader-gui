@@ -57,6 +57,11 @@
                 "manifestId": "1842430648075680678"
             },
             {
+                "name": "Old Patch - Exe",
+                "depotId": "292042",
+                "manifestId": "5236853520924712908"
+            },
+            {
                 "name": "Old Patch - Japanese Audio",
                 "depotId": "292040",
                 "manifestId": "4697253065205230846"
